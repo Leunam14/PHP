@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento 1</title>
+</head>
+
+<body>
+
+
+<?php
+
+	echo "Este es el primer mensaje <br>";
+
+
+    function damedatos(){
+
+        echo "Este es el mensaje de dentro de la función<br>";
+
+    }
+
+    echo "Este es el segundo mensaje<br>";
+
+    damedatos();
+	
+    
+
+?>
+</body>
+</html>
