@@ -103,6 +103,14 @@ class bd
         $this->conn->commit();
   } 
 
+  public function setEquipo($dorsal, $equipo) {
+    $this->conn->beginTransaction();
+    $sql = "UPDATE ciclista SET nomeq = ? WHERE dorsal = ?";
+    $stmt = $this->conn->prepare($sql);
+    $OK = $stmt->execute(array($equipo, $dorsal));
+    return $this->conn->commit();
+  }
+
 
 
 }

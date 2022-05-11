@@ -16,13 +16,13 @@ $equipos=$bd->getEquipos($datos[3]);
                Nombre: <input type="text" name="nombre" id="nombre" value="<?php echo $datos[1]; ?>"/><br/><br/>
                
                Edad:   <input type="text" name="edad" id="edad" value="<?php echo $datos[2]; ?>"/><br/><br/> 
-               Equipo: <select name="equipo" id="equipo" onchange="addInput()">
+               Equipo: <select name="equipo" id="equipo">
                <?php
-                 echo '<option selected>'. $datos[3] .'</option>';
+                 echo '<option selected value="' . $datos[3] . '">'. $datos[3] .'</option>';
                  if (isset($equipos))
                  {
                    foreach($equipos as $row2)
-                     echo '<option>'. $row2['nomeq'] .'</option>';               
+                     echo '<option value="' . $row2['nomeq'] . '">'. $row2['nomeq'] .'</option>';               
                  }
                 ?>
                </select><br/><br/> 
@@ -31,15 +31,5 @@ $equipos=$bd->getEquipos($datos[3]);
         </form>
 	</div>
 
-  <script>
-
-      function addInput(){
-        var select = $("#equipo").val();
-        
-    }
-
-  
-
-  </script>
 </body>
 </html>

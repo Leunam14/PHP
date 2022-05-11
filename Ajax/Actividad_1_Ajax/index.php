@@ -4,12 +4,15 @@
 	<meta charset="utf-8">
     
 	<script src="jquery-3.2.1.min.js"></script>
+    <script src="index.js"></script>
+    
     <!-- javascrip para rellenar los div izquierdo y derecho con contenido -->
 	<script>
-            function cargar(div, desde)
-            {
-                $(div).load(desde);
-            }
+        function cargar(div, desde)
+        {
+            $(div).load(desde);
+            cargar_ajax();
+        }
     </script>
 	<!-- Estilos para dividir la pantalla en dos Marcos de 50% y 40% -->
 	<style>
