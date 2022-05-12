@@ -1,0 +1,31 @@
+#Izq{
+    display: table-cell;
+    float:left;
+    border: 2px solid rgb(190, 14, 123);
+    border-radius: 5px;
+    width: 60%;
+    height: 80%;
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    background-color: rgb(236, 163, 208);
+}
+#Der{
+    display: table-cell;
+    float:right;
+    width: 40%;
+    height: 80%;
+    border: 2px solid purple;
+    border-radius: 5px;
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    background-color: #A598CD;
+}
+#map{
+    width: 400px; height: 250px;
+    display: none;
+}
+
+h4{
+    color: blue;
+    text-align: center;
+}
