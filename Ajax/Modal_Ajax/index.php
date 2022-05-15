@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
     
 	<script src="jquery-3.2.1.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="index.js"></script>
     
     <!-- javascrip para rellenar los div izquierdo y derecho con contenido -->
@@ -54,7 +55,7 @@
     <!-- Los cargo con contenido -->
     <script type="text/javascript">
         cargar('#Izq','izquierdo.php');
-        cargar('#Der','derecho.php');
+        // cargar('#Der','derecho.php');
     </script>
 </body>
 </html>

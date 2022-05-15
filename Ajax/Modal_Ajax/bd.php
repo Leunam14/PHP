@@ -26,9 +26,10 @@ class bd
       {
         echo '<tr>';
           echo '<td>';
-            echo '<a href="#" onclick="cargar(\'#Der\', \'derecho.php?X='. $row['dorsal'] . '\');">';  
+            // echo '<a href="#" onclick="cargar(\'#Der\', \'derecho.php?X='. $row['dorsal'] . '\');">';  
+            echo '<a href="#" class="enlaceDorsal" >';
             echo $row['dorsal'];
-            echo '</a>';   
+            echo '</a>';  
           echo '</td>';
           echo '<td>';
             echo $row['nombre']; 
