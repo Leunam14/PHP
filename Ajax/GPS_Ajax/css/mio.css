@@ -3,7 +3,7 @@
     float:left;
     border: 2px solid rgb(190, 14, 123);
     border-radius: 5px;
-    width: 60%;
+    width: 59%;
     height: 80%;
     box-sizing:border-box;
     -moz-box-sizing:border-box;
@@ -28,4 +28,16 @@
 h4{
     color: blue;
     text-align: center;
+}
+
+.contenido {
+    color: rgb(118, 228, 127);
+    padding-left: 10px;
+}
+
+hr{
+    /*color: #474B4E; No creo que haga falta*/
+	width: 70%;
+	margin: 30px;
+
 }

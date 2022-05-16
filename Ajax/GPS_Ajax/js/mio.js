@@ -25,7 +25,12 @@ function onLocationFound(e) {
  var radius = e.accuracy / 2;
  var geocodeService = L.esri.Geocoding.geocodeService();
  geocodeService.reverse().latlng(e.latlng).run(function(error, result) {
+
+  
         console.log(result);
+
+
+
         let dir = document.getElementById('A4');
         dir.value = result.address.Match_addr;
         direccion= result.address.Match_addr;
@@ -67,3 +72,9 @@ function onLocationFound(e) {
           circulo.addTo(map);
         });  
     });
+
+
+
+function anadirDatos() {
+
+}

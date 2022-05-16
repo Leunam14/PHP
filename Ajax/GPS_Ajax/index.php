@@ -1,10 +1,9 @@
 <?php
 
-require_once("db.php");
+require_once("bd.php");
 
-$usar_db = new DBControl();
+$usar_db = new bd();
 
-$conn = $usar_db->conectarDB();
 
 ?>
 
@@ -38,6 +37,7 @@ $conn = $usar_db->conectarDB();
             font-size: 35px;
             color: #36A0FF;
         }
+
     </style>
 
 </head>
@@ -157,10 +157,15 @@ $conn = $usar_db->conectarDB();
 
         </div>
     </div>
+    
+    <div id="Der">
+                                                
+    </div>
 
     <script type="text/javascript">
         
-        $("#enviar-btn").click(function() {
+        $("#enviar-btn").click(function(e) {
+            e.preventDefault()
                     //Obtenemos el valor del campo nombre
                     var nombre = $("input#A0").val();
                     var nombre1 = document.querySelector("#A0").value;
@@ -235,48 +240,69 @@ $conn = $usar_db->conectarDB();
                         return false;
                     }
 
-                    //Construimos la variable que se guardará en el data del Ajax para pasar al archivo php que procesará los datos
-                    //var datos = $(this).serialize();
-                    /*var datos = {nombre:nombre,
-                                apellidos:apellidos,
-                                cantidad:cantidad,
-                                telefono:telefono,
-                                direccion:direccion,
-                                descripcion:descripcion}*/
 
+                    //Para comprobar si me lo estaba cogiendo o no
+
+                    // console.log(nombre1)
+                    // console.log(apellidos1)
+                    // console.log(cantidad1)
+                    // console.log(direccion1)
+                    // console.log(descripcion1)
+
+                    const contenedor = document.getElementById("Der");
+
+                    /**Y se van a ir imprimiendo  */
+                    contenedor.innerHTML += `
                     
-                    /* $.ajax({
+                        <div class="contenido">
+                            <p>
+                                Nombre y apellidos: ${nombre1} ${apellidos1}
+                                <br>
+                                Cantidad: ${cantidad1}
+                                <br>
+                                Teléfono: ${telefono1}
+                                <br>
+                                Direccion: ${direccion1}
+                                <br>
+                                Descripcion: ${descripcion1}
+                            </p>
+                        </div>
+                        <hr />
+                    
+                    `
+
+                    $.ajax({
                         type: "post",
-                        url: "cambios_php.php",
+                        url: "cambios.php",
                         data: {
+                           
                             nombre:nombre1,
-                            apellido:apellido1,
+                            apellido:apellidos1,
                             cantidad:cantidad1,
                             telefono:telefono1,
                             direccion:direccion1,
                             descripcion:descripcion1
                         
                         },    
-                        success: function(response) {
-                            if(response == "1" || response == 1) {
-                           
+                        success: function(data) {
+                            console.log("Se agregaron los datos: "+ data); 
                         }
-                            $("#Der").html(data);
-                            console.log(data);
+                        
+                        
+                    });
+                    
+                    //Y reseteamos los campos
 
-                            
-                        }
-                        error: function(err) {
-                        console.error(err)
-                        }
-                    }); */
+                    document.querySelector("#A0").value = "";
+                    document.querySelector("#A1").value = "";
+                    document.querySelector("#A2").value = "";
+                    document.querySelector("#A3").value = "";
+                    document.querySelector("#A4").value = "";
+                    document.querySelector("#A00").value = "";
+
         })
 
     </script>
-
-    <div id="Der">
-
-    </div>
     <script src="./js/mio.js"></script>
 </body>
 
